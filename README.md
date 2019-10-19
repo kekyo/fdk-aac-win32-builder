@@ -8,7 +8,7 @@ libfdk-aac (0.1.6 and 2.0.1) and fdkaac tool for Windows auto binary builder scr
 
 It'll build both:
 
-* `libfdk-aac.dll`
+* `libfdk-aac-1.dll`
 * `libfdk-acc-2.dll`
 * `fdkaac.exe` (Linked libfdk-aac-2.dll)
 
@@ -21,14 +21,14 @@ It'll build both:
   * DON'T USE `MSYS2` (unannoteted) terminal.
 3. Update components by pacman. (See MSYS2 top page.)
 4. Install development tools.
-  * Choose `pacman -S mingw-w64-i686-gcc autoconf automake-wrapper` if you wanna 32bit binary.
-  * Choose `pacman -S mingw-w64-x86_64-gcc autoconf automake-wrapper` if you wanna 64bit binary.
+  * Execute `pacman -S mingw-w64-i686-gcc autoconf automake-wrapper make` if you wanna 32bit binary.
+  * Execute `pacman -S mingw-w64-x86_64-gcc autoconf automake-wrapper make` if you wanna 64bit binary.
 5. Execute `download.sh`, it'll download fdk-aac archive from [official opencore-amr project](https://sourceforge.net/projects/opencore-amr/) mirror.
 6. Execute `build.sh`.
 
 Finally, stored binaries into artifacts directory.
-  * `artifacts/i686-w64-mingw32/libfdk-aac*` (32bit)
-  * `artifacts/x86_64-w64-mingw32/libfdk-aac*` (64bit)
+  * `artifacts/i686-w64-mingw32/` (32bit)
+  * `artifacts/x86_64-w64-mingw32/` (64bit)
 
 # Limitation
 
