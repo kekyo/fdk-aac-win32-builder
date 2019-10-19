@@ -28,7 +28,7 @@ Finally, stored binaries into artifacts directory.
 
 # Limitation
 
-Unfortunately, 32bit binaries referenced MinGW32 gcc depending library named `libgcc_s_dw2-1.dll`. Because fdk-aac use dividing operator, it requires implicitly asynchronous exception handler contains into it.
+Unfortunately, 32bit binaries referenced MinGW32 gcc depending library named `libgcc_s_dw2-1.dll` and `libwinpthread-1.dll`. Because fdk-aac use dividing operator, it requires implicitly asynchronous exception handler contains into it.
 
 (It doesn't apply for 64bit binaries.)
 
