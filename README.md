@@ -3,7 +3,11 @@
 libfdk-aac (0.1.6 and 2.0.1) and fdkaac tool for Windows auto binary builder scripts.
 
 [fdk-aac](https://github.com/mstorsjo/fdk-aac) is "A standalone library of the Fraunhofer FDK AAC code from Android."
+
+[fdkaac](https://github.com/nu774/fdkaac) is "command line encoder frontend for libfdk-aac".
+
 It'll build both:
+
 * `libfdk-aac.dll`
 * `libfdk-acc-2.dll`
 * `fdkaac.exe` (Linked libfdk-aac-2.dll)
