@@ -19,7 +19,9 @@ It'll build both:
   * Choose `MSYS2 MinGW-32bit` terminal if you wanna 32bit (i686) binary.
   * Choose `MSYS2 MinGW-64bit` terminal if you wanna 64bit (x86_64) binary.
   * DON'T USE `MSYS2` (unannoteted) terminal.
+  
   ![Terminals](Images/terminals.png)
+  
 3. Update components by pacman. (See MSYS2 top page.)
 4. Install development tools.
   * Execute `pacman -S mingw-w64-i686-gcc autoconf automake-wrapper make` if you wanna 32bit binary.
