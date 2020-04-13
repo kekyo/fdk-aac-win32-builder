@@ -1,5 +1,19 @@
 #! /bin/sh
 
+###################################
+# Compiler optimization flags:
+
+# Platform native (not include AVX-512, it's standard options)
+CFLAGS="-O3 -flto -march=native"
+
+# AVX-512
+#CFLAGS="-O3 -flto -march=native -mavx512f -mavx512dq -mavx512er -mavx512cd -mavx512bw -mavx512pf -mavx512vl -mavx512ifma -mavx512vbmi"
+
+# For debugging/reference usage
+#CFLAGS="-O0"
+
+###################################
+
 cd stage
 
 rm -rf $MINGW_CHOST
@@ -11,20 +25,20 @@ tar -zxvf ../../artifacts/fdk-aac-2.0.1.tar.gz
 tar -zxvf ../../artifacts/fdkaac-1.0.0.tar.gz
 
 cd fdk-aac-0.1.6
-./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/
+./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j40
 make install
 cd ..
 
 cd fdk-aac-2.0.1
-./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/
+./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j40
 make install
 cd ..
 
 cd fdkaac-1.0.0
 autoreconf -i
-./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/
+./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j40
 make install
 cd ..

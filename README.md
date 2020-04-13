@@ -26,12 +26,37 @@ It'll build both:
 4. Install development tools.
   * Execute `pacman -S mingw-w64-i686-gcc autoconf automake-wrapper make` if you wanna 32bit binary.
   * Execute `pacman -S mingw-w64-x86_64-gcc autoconf automake-wrapper make` if you wanna 64bit binary.
-5. Execute `./download.sh`, it'll download fdk-aac archive from [official opencore-amr project](https://sourceforge.net/projects/opencore-amr/) mirror.
-6. Execute `./build.sh`.
+5. Execute `./setup.sh`, it'll download fdk-aac archive from [official opencore-amr project](https://sourceforge.net/projects/opencore-amr/) mirror, and extract reference files for testing purpose.
+6. You can choose GCC's optimization option. See `CFLAGS` symbols in the head of `build.sh` file.
+7. Execute `./build.sh`.
 
 Finally, stored binaries into artifacts directory.
   * `artifacts/i686-w64-mingw32/` (32bit)
   * `artifacts/x86_64-w64-mingw32/` (64bit)
+
+If you have to get results for PCM bits equality, you can execute `./test.sh` after building was successful. It'll use `cmp` command, so will show nothing output if these PCM files are verified. For example:
+
+```sh
+$ ./test.sh
+[100%] 01:35.852/01:35.852 (87x), ETA 00:00.000
+4227066/4227066 samples processed in 00:01.106
+[100%] 01:35.852/01:35.852 (71x), ETA 00:00.000
+4227066/4227066 samples processed in 00:01.352
+[100%] 01:35.852/01:35.852 (68x), ETA 00:00.000
+4227066/4227066 samples processed in 00:01.403
+[100%] 01:35.852/01:35.852 (113x), ETA 00:00.000
+4227066/4227066 samples processed in 00:00.848
+[100%] 01:35.852/01:35.852 (69x), ETA 00:00.000
+4227066/4227066 samples processed in 00:01.384
+[100%] 01:35.852/01:35.852 (82x), ETA 00:00.000
+4227066/4227066 samples processed in 00:01.176
+[100%] 01:35.852/01:35.852 (101x), ETA 00:00.000
+4227066/4227066 samples processed in 00:00.950
+[100%] 01:35.852/01:35.852 (80x), ETA 00:00.000
+4227066/4227066 samples processed in 00:01.203
+
+$
+```
 
 # Limitation
 
