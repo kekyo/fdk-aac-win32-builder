@@ -58,14 +58,6 @@ $ ./test.sh
 $
 ```
 
-# Limitation
-
-Unfortunately, 32bit binaries referenced MinGW32 gcc depending library named `libgcc_s_dw2-1.dll` and `libwinpthread-1.dll`. Because fdk-aac use dividing operator, it requires implicitly asynchronous exception handler contains into it.
-
-(It doesn't apply for 64bit binaries.)
-
-![Dependency walker](Images/depends.png)
-
 # License
 
 MIT, inside all contents except built binaries. See description for fdk-aac.
