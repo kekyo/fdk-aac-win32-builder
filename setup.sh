@@ -1,5 +1,11 @@
 #! /bin/sh
 
+if [ -z "$MINGW_CHOST" ]; then
+    echo "Setup failed because maybe you did not use MinGW terminal instead MSYS terminal."
+    echo "See README.md how to use instructions."
+    exit
+fi
+
 rm -rf artifacts
 rm -rf stage
 

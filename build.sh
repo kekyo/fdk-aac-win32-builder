@@ -14,6 +14,12 @@ CFLAGS="-O3 -flto -march=native"
 
 ###################################
 
+if [ -z "$MINGW_CHOST" ]; then
+    echo "Building failed, because maybe you did not use MinGW terminal instead MSYS terminal."
+    echo "See README.md how to use instructions."
+    exit
+fi
+
 cd stage
 
 rm -rf $MINGW_CHOST
