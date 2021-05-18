@@ -29,7 +29,8 @@ cd $MINGW_CHOST
 tar -zxvf ../../artifacts/fdk-aac-0.1.6.tar.gz
 #tar -zxvf ../../artifacts/fdk-aac-2.0.1.tar.gz
 tar -zxvf ../../artifacts/fdk-aac-2.0.2.tar.gz
-tar -zxvf ../../artifacts/fdkaac-1.0.0.tar.gz
+#tar -zxvf ../../artifacts/fdkaac-1.0.0.tar.gz
+tar -zxvf ../../artifacts/fdkaac-1.0.2.tar.gz
 
 cd fdk-aac-0.1.6
 CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
@@ -44,7 +45,8 @@ make -j8
 make install
 cd ..
 
-cd fdkaac-1.0.0
+#cd fdkaac-1.0.0
+cd fdkaac-1.0.2
 autoreconf -i
 CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j8
@@ -68,4 +70,5 @@ cp ../../stage/$MINGW_CHOST/fdk-aac-2.0.2/.libs/libfdk-aac.a libfdk-aac-2.a
 cp ../../stage/$MINGW_CHOST/fdk-aac-2.0.2/.libs/libfdk-aac.dll.a libfdk-aac-2.dll.a
 cp ../../stage/$MINGW_CHOST/fdk-aac-2.0.2/.libs/libfdk-aac-2.dll .
 
-cp ../../stage/$MINGW_CHOST/fdkaac-1.0.0/fdkaac.exe .
+#cp ../../stage/$MINGW_CHOST/fdkaac-1.0.0/fdkaac.exe .
+cp ../../stage/$MINGW_CHOST/fdkaac-1.0.2/fdkaac.exe .
