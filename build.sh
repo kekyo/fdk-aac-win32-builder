@@ -39,7 +39,7 @@ make install
 cd ..
 
 #cd fdk-aac-2.0.1
-cd fdk-aac-2.0.1
+cd fdk-aac-2.0.2
 CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j8
 make install
