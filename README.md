@@ -24,8 +24,8 @@ It'll build both:
   
 3. Update components by pacman. (See MSYS2 top page.)
 4. Install development tools.
-  * Execute `pacman -S mingw-w64-i686-gcc autoconf automake-wrapper make` if you wanna 32bit binary.
-  * Execute `pacman -S mingw-w64-x86_64-gcc autoconf automake-wrapper make` if you wanna 64bit binary.
+  * Execute `pacman -S mingw-w64-i686-gcc autoconf automake-wrapper make libtool` if you wanna 32bit binary.
+  * Execute `pacman -S mingw-w64-x86_64-gcc autoconf automake-wrapper make libtool` if you wanna 64bit binary.
 5. Execute `./setup.sh`, it'll download fdk-aac archive from [official opencore-amr project](https://sourceforge.net/projects/opencore-amr/) mirror, and extract reference files for testing purpose.
 6. You can choose GCC's optimization option. See `CFLAGS` symbols in the head of `build.sh` file.
 7. Execute `./build.sh`.
