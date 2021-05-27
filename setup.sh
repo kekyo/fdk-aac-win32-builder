@@ -25,17 +25,3 @@ wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distribute
 wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distributes/fdkaac-1.0.0.tar.gz
 
 cd ..
-
-rm -rf references
-mkdir references
-
-test-materials/ffmpeg.exe -i test-materials/battleThemeA.mp3 references/BattleThemeA.wav > /dev/null 2>&1
-
-test-materials/ffmpeg.exe -i test-materials/BattleThemeA_p2_44_128.aac -f s16le references/battleThemeA_p2_44_128.pcm > /dev/null 2>&1
-test-materials/ffmpeg.exe -i test-materials/BattleThemeA_p5_44_128.aac -f s16le references/battleThemeA_p5_44_128.pcm > /dev/null 2>&1
-test-materials/ffmpeg.exe -i test-materials/BattleThemeA_p23_44_128.aac -f s16le references/battleThemeA_p23_44_128.pcm > /dev/null 2>&1
-test-materials/ffmpeg.exe -i test-materials/BattleThemeA_p29_44_128.aac -f s16le references/battleThemeA_p29_44_128.pcm > /dev/null 2>&1
-test-materials/ffmpeg.exe -i test-materials/BattleThemeA_p39_44_128.aac -f s16le references/battleThemeA_p39_44_128.pcm > /dev/null 2>&1
-test-materials/ffmpeg.exe -i test-materials/BattleThemeA_p2_44_256.aac -f s16le references/battleThemeA_p2_44_256.pcm > /dev/null 2>&1
-test-materials/ffmpeg.exe -i test-materials/BattleThemeA_p2_44_m1.aac -f s16le references/battleThemeA_p2_44_m1.pcm > /dev/null 2>&1
-test-materials/ffmpeg.exe -i test-materials/BattleThemeA_p2_44_m5.aac -f s16le references/battleThemeA_p2_44_m5.pcm > /dev/null 2>&1
