@@ -14,6 +14,8 @@ CFLAGS="-O3 -flto -march=native"
 
 ###################################
 
+NPB=`cat /proc/cpuinfo |grep "processor"|wc -l`
+
 if [ -z "$MINGW_CHOST" ]; then
     echo "Building failed, because maybe you did not use MinGW terminal instead MSYS terminal."
     echo "See README.md how to use instructions."
@@ -32,20 +34,20 @@ tar -zxvf ../../artifacts/fdkaac-1.0.0.tar.gz
 
 cd fdk-aac-0.1.6
 CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
-make -j8
+make -j$NPB
 make install
 cd ..
 
 cd fdk-aac-2.0.1
 CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
-make -j8
+make -j$NPB
 make install
 cd ..
 
 cd fdkaac-1.0.0
 autoreconf -i
 CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
-make -j8
+make -j$NPB
 make install
 cd ..
 
