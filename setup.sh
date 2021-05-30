@@ -16,13 +16,17 @@ cd artifacts
 
 # wget https://jaist.dl.sourceforge.net/project/opencore-amr/fdk-aac/fdk-aac-0.1.6.tar.gz
 # wget https://jaist.dl.sourceforge.net/project/opencore-amr/fdk-aac/fdk-aac-2.0.1.tar.gz
-# wget https://github.com/nu774/fdkaac/archive/1.0.0.tar.gz
+## wget https://jaist.dl.sourceforge.net/project/opencore-amr/fdk-aac/fdk-aac-2.0.2.tar.gz
+## wget https://github.com/nu774/fdkaac/archive/1.0.0.tar.gz
+# wget https://github.com/nu774/fdkaac/archive/refs/tags/v1.0.2.tar.gz
 
 # mv 1.0.0.tar.gz fdkaac-1.0.0.tar.gz
 
 wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distributes/fdk-aac-0.1.6.tar.gz
-wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distributes/fdk-aac-2.0.1.tar.gz
-wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distributes/fdkaac-1.0.0.tar.gz
+#wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distributes/fdk-aac-2.0.1.tar.gz
+wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distributes/fdk-aac-2.0.2.tar.gz
+#wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distributes/fdkaac-1.0.0.tar.gz
+wget https://github.com/kekyo/fdk-aac-win32-builder/releases/download/distributes/fdkaac-1.0.2.tar.gz
 
 cd ..
 
