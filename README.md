@@ -40,22 +40,11 @@ If you have to get results for PCM bits equality, you can execute `./test.sh` af
 
 ```sh
 $ ./test.sh
-[100%] 01:35.852/01:35.852 (87x), ETA 00:00.000
-4227066/4227066 samples processed in 00:01.106
-[100%] 01:35.852/01:35.852 (71x), ETA 00:00.000
-4227066/4227066 samples processed in 00:01.352
-[100%] 01:35.852/01:35.852 (68x), ETA 00:00.000
-4227066/4227066 samples processed in 00:01.403
-[100%] 01:35.852/01:35.852 (113x), ETA 00:00.000
-4227066/4227066 samples processed in 00:00.848
-[100%] 01:35.852/01:35.852 (69x), ETA 00:00.000
-4227066/4227066 samples processed in 00:01.384
-[100%] 01:35.852/01:35.852 (82x), ETA 00:00.000
-4227066/4227066 samples processed in 00:01.176
-[100%] 01:35.852/01:35.852 (101x), ETA 00:00.000
-4227066/4227066 samples processed in 00:00.950
-[100%] 01:35.852/01:35.852 (80x), ETA 00:00.000
-4227066/4227066 samples processed in 00:01.203
+Step 1. Generating reference PCM files
+Step 2. Generating test AAC files using fdkaac.exe with libfdk-aac-2.dll
+Step 3. Generating test PCM files
+Step 4. Comparing PCM files
+====Test finished====
 
 $
 ```
