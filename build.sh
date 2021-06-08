@@ -49,7 +49,10 @@ cd ..
 
 cd fdkaac-1.0.2
 autoreconf -i
-CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
+#'-Wstringop-overflow=0' is a temporary fix for
+#'src/pcm_readhelper.c:231:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]';
+#Remove this param if upstream fix this problem.
+CC="gcc -pipe -static-libgcc -Wstringop-overflow=0" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j$NPB
 make install
 cd ..
