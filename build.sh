@@ -6,10 +6,11 @@ set -x
 # Compiler optimization flags:
 
 # Platform native (not include AVX-512, it's standard options)
-CFLAGS="-O3 -flto -march=native"
+# Remove "-flto" to avoid Wstringop-overflow warning for fdkaac
+CFLAGS="-O3 -march=native"
 
 # AVX-512
-#CFLAGS="-O3 -flto -march=native -mavx512f -mavx512dq -mavx512er -mavx512cd -mavx512bw -mavx512pf -mavx512vl -mavx512ifma -mavx512vbmi"
+#CFLAGS="-O3 -march=native -mavx512f -mavx512dq -mavx512er -mavx512cd -mavx512bw -mavx512pf -mavx512vl -mavx512ifma -mavx512vbmi"
 
 # For debugging/reference usage
 #CFLAGS="-O0"
@@ -35,24 +36,23 @@ tar -zxf ../../artifacts/fdk-aac-2.0.2.tar.gz
 tar -zxf ../../artifacts/fdkaac-1.0.2.tar.gz
 
 cd fdk-aac-0.1.6
-CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
+#Temporary add "-flto" option here, should be replaced by interactive compile switches in the future
+CC="gcc -pipe -static-libgcc -flto" CXX="g++ -pipe -static-libgcc -flto" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j$NPB
 make install
 cd ..
 
 cd fdk-aac-2.0.2
 autoreconf -i
-CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
+#Temporary add "-flto" option here, should be replaced by interactive compile switches in the future
+CC="gcc -pipe -static-libgcc -flto" CXX="g++ -pipe -static-libgcc -flto" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j$NPB
 make install
 cd ..
 
 cd fdkaac-1.0.2
 autoreconf -i
-#'-Wstringop-overflow=0' is a temporary fix for
-#'src/pcm_readhelper.c:231:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]';
-#Remove this param if upstream fix this problem.
-CC="gcc -pipe -static-libgcc -Wstringop-overflow=0" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
+CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j$NPB
 make install
 cd ..
