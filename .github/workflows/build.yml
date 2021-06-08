@@ -1,0 +1,21 @@
+name: .NET
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: msys2/setup-msys2@v2
+      with:
+        msystem: MINGW64
+        update: true
+        install: >-
+          mingw-w64-x86_64-gcc
+          autoconf
+          automake-wrapper
+          make
+          libtool
+    - uses: actions/checkout@v2
+    - run: ./build.sh
+    - run: ./test.sh
