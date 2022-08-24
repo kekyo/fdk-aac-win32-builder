@@ -1,6 +1,6 @@
 # libfdk-aac for Windows binary builder
 
-libfdk-aac (0.1.6 and 2.0.2) and fdkaac tool (1.0.2) for Windows auto binary builder scripts.
+libfdk-aac (0.1.6 and 2.0.2) and fdkaac tool (1.0.3) for Windows auto binary builder scripts.
 
 [![CI build (master)](https://github.com/kekyo/fdk-aac-win32-builder/workflows/Build/badge.svg?branch=master)](https://github.com/kekyo/fdk-aac-win32-builder/actions?query=branch%3Amaster)
 
