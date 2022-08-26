@@ -1,10 +1,10 @@
 # libfdk-aac for Windows binary builder
 
-libfdk-aac (0.1.6 and 2.0.2) and fdkaac tool (1.0.2) for Windows auto binary builder scripts.
+libfdk-aac (0.1.6 and 2.0.2) and fdkaac tool (1.0.3) for Windows auto binary builder scripts.
 
 [![CI build (master)](https://github.com/kekyo/fdk-aac-win32-builder/workflows/Build/badge.svg?branch=master)](https://github.com/kekyo/fdk-aac-win32-builder/actions?query=branch%3Amaster)
 
-[fdk-aac](https://github.com/mstorsjo/fdk-aac) is "A standalone library of the Fraunhofer FDK AAC code from Android."
+[fdk-aac](https://github.com/mstorsjo/fdk-aac) is "A standalone library of the Fraunhofer FDK AAC code from Android." A mirror of released source code, see [official opencore-amr project](https://sourceforge.net/projects/opencore-amr/).
 
 [fdkaac](https://github.com/nu774/fdkaac) is "command line encoder frontend for libfdk-aac".
 
@@ -28,8 +28,8 @@ It'll build both:
 4. Install development tools.
   * Execute `pacman -S mingw-w64-i686-gcc autoconf automake-wrapper make libtool` if you wanna 32bit binary.
   * Execute `pacman -S mingw-w64-x86_64-gcc autoconf automake-wrapper make libtool` if you wanna 64bit binary.
-5. Execute `./setup.sh`, it'll download fdk-aac archive from [official opencore-amr project](https://sourceforge.net/projects/opencore-amr/) mirror, and extract reference files for testing purpose.
-6. You can choose GCC's optimization option. See `CFLAGS` symbols in the head of `build.sh` file.
+5. Execute `./setup.sh`, it'll download source code archive and extract reference files for testing purpose.
+6. You can choose GCC's optimization option by editing `build.sh`. See `CFLAGS` symbols in the head of this file.
 7. Execute `./build.sh`.
 
 Finally, stored binaries into artifacts directory.

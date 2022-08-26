@@ -33,7 +33,7 @@ cd $MINGW_CHOST
 
 tar -zxf ../../artifacts/fdk-aac-0.1.6.tar.gz
 tar -zxf ../../artifacts/fdk-aac-2.0.2.tar.gz
-tar -zxf ../../artifacts/fdkaac-1.0.2.tar.gz
+tar -zxf ../../artifacts/fdkaac-1.0.3.tar.gz
 
 cd fdk-aac-0.1.6
 #Temporary add "-flto" option here, should be replaced by interactive compile switches in the future
@@ -50,7 +50,7 @@ make -j$NPB
 make install
 cd ..
 
-cd fdkaac-1.0.2
+cd fdkaac-1.0.3
 autoreconf -i
 CC="gcc -pipe -static-libgcc" CXX="g++ -pipe -static-libgcc" ./configure --prefix=$MINGW_PREFIX/$MINGW_CHOST/ CFLAGS="${CFLAGS}"
 make -j$NPB
@@ -71,4 +71,4 @@ cp ../../stage/$MINGW_CHOST/fdk-aac-2.0.2/.libs/libfdk-aac.a libfdk-aac-2.a
 cp ../../stage/$MINGW_CHOST/fdk-aac-2.0.2/.libs/libfdk-aac.dll.a libfdk-aac-2.dll.a
 cp ../../stage/$MINGW_CHOST/fdk-aac-2.0.2/.libs/libfdk-aac-2.dll .
 
-cp ../../stage/$MINGW_CHOST/fdkaac-1.0.2/fdkaac.exe .
+cp ../../stage/$MINGW_CHOST/fdkaac-1.0.3/fdkaac.exe .
